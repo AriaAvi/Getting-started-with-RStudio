@@ -1,0 +1,21 @@
+#Simple codes for beginners in R
+## Please watch the relevant videos on my YouTUbe channel for further information about RStudio and R
+### YouTUbe: https://www.youtube.com/watch?v=aCUM4r1ONhg&list=PLTjlULGD9bNIkYLqIzneYcc9Gg2VkEzlZ
+
+library(haven)
+SEM <- read_sav("C:/Users/...") # copy and paste the path of your datafile inside th quotation marks;
+#Note that my file's name is SEM. Instead of SEM, you should enter your own file's name.
+View(SEM)
+head(SEM)
+names(SEM)
+SEM2 <- SEM[SEM$gender==1,] #creating a new object or dataframe by the name of SEM2
+summary(SEM)
+summary(SEM2)
+SEM3 <-SEM[SEM$Motiv1 >1 , c(2,3,4,5)] #creating a new object or dataframe by the name of SEM3
+head(SEM3)
+SEM4 <- SEM[SEM$gender >0, -c(2,3,4,5)] #creating a new object or dataframe by the name of SEM4
+head(SEM4)
+names(SEM4)
+summary(SEM4)
+install.packages("psych")
+library(psych)
